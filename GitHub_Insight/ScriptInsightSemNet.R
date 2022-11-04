@@ -5,10 +5,11 @@ library(janitor)
 library(SemNeT)
 library(reshape2)
 library(data.table)
+library(readr)
 
 
 
-CRA <- read_excel("CRA.xlsx")
+CRA <- read_csv("CRA.csv")
 
 #Replace RT's of 0 with 30000
 CRA$cratSlide2.RT <- ifelse(CRA$cratSlide2.RT == "0", "30000", CRA$cratSlide2.RT)
